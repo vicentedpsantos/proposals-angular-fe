@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
+  moduleId: module.id,
+  selector: 'app',
+  template: '<h1>Navigation</h1>',
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'freelance-camp-fe';
+  title = 'Proposals FrontEnd Angular';
 }

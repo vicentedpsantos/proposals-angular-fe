@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { HomepageComponent } from './homepage.component'
+import { HomepageComponent } from './homepage/homepage.component'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
   ],
   providers: [],
   bootstrap: [
-    HomepageComponent
+    AppComponent
   ]
 })
 export class AppModule { }
