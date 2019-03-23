@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Document } from './document';
 
 @Component({
-  moduleId: module.id,
   selector: 'documents',
   templateUrl: './documents.component.html',
   styleUrls: ['./documents.component.sass']
