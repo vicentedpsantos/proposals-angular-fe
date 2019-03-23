@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { HomepageComponent } from './homepage/homepage.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { ProposalListComponent } from './proposal/proposal-list.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { AppComponent } from './app.component';
   declarations: [
     DocumentsComponent,
     HomepageComponent,
+    ProposalListComponent,
     AppComponent
   ],
   imports: [
