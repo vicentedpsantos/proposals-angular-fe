@@ -12,7 +12,11 @@
               #customer="ngModel"
               [(ngModel)]="proposal.customer"
       >
+      <div [hidden]="customer.valid || customer.pristine">
+          Customer name is required
+      </div>
     </div>
+
     <div class="form-group">
       <label for="portfolio_url">Portoflio URL</label>
       <input type="text"
@@ -23,7 +27,11 @@
               #portfolio_url="ngModel"
               [(ngModel)]="proposal.portfolio_url"
       >
+      <div [hidden]="portfolio_url.valid || portfolio_url.pristine">
+          Portoflio URL is required
+      </div>
     </div>
+
     <div class="form-group">
       <label for="tools">Tools</label>
       <input type="text"
@@ -34,7 +42,11 @@
               #tools="ngModel"
               [(ngModel)]="proposal.tools"
       >
+      <div [hidden]="tools.valid || tools.pristine">
+          A list of tools is required
+      </div>
     </div>
+
     <div class="form-group">
       <label for="estimated_hours">Estimated Hours</label>
       <input type="number"
@@ -45,7 +57,11 @@
               #estimated_hours="ngModel"
               [(ngModel)]="proposal.estimated_hours"
       >
+      <div [hidden]="estimated_hours.valid || estimated_hours.pristine">
+        You need to enter your estimated hours for the project
+      </div>
     </div>
+
     <div class="form-group">
       <label for="hourly_rate">Hourly Rate</label>
       <input type="number"
@@ -56,7 +72,11 @@
               #hourly_rate="ngModel"
               [(ngModel)]="proposal.hourly_rate"
       >
+      <div [hidden]="hourly_rate.valid || hourly_rate.pristine">
+        You need to enter your hourly rate for the project
+      </div>
     </div>
+
     <div class="form-group">
       <label for="weeks_to_complete">Weeks to Complete</label>
       <input type="number"
@@ -67,7 +87,11 @@
               #weeks_to_complete="ngModel"
               [(ngModel)]="proposal.weeks_to_complete"
       >
+      <div [hidden]="weeks_to_complete.valid || weeks_to_complete.pristine">
+        You need to enter the weeks you estimate to complete the project
+      </div>
     </div>
+
     <div class="form-group">
       <label for="client_email">Client e-mail <em>(Optional)</em></label>
       <input type="email"
