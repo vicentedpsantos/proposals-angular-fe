@@ -4,8 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Front end for microservices application that will let users create, list and send new freelancing proposals
 
 ## Models
-- ...
-- ...
+- Proposal
+- Documents
 
 ## Features
 - ...
