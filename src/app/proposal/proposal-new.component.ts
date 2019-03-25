@@ -3,7 +3,8 @@ import { Proposal } from './proposal'
 
 @Component({
   selector: 'proposal-new',
-  templateUrl: './proposal-new.component.html'
+  templateUrl: './proposal-new.component.html',
+  styleUrls: ['./proposal-new.component.sass']
 })
 export class ProposalNewComponent implements OnInit {
   constructor() { }
