@@ -8,6 +8,7 @@
           <div class="form-group">
             <label for="customer">Customer Name</label>
             <input type="text"
+                    class="form-control"
                     id="customer"
                     placeholder="Just a company"
                     required
@@ -15,14 +16,15 @@
                     #customer="ngModel"
                     [(ngModel)]="proposal.customer"
             >
-            <div [hidden]="customer.valid || customer.pristine">
-                Customer name is required
+            <div [hidden]="customer.valid || customer.pristine" class="mt-2 alert alert-danger">
+                <strong>Required!</strong> Please fill in the box above.
             </div>
           </div>
 
           <div class="form-group">
             <label for="portfolio_url">Portfolio URL</label>
             <input type="text"
+                    class="form-control"
                     id="portfolio_url"
                     placeholder="Just a company"
                     required
@@ -30,14 +32,15 @@
                     #portfolio_url="ngModel"
                     [(ngModel)]="proposal.portfolio_url"
             >
-            <div [hidden]="portfolio_url.valid || portfolio_url.pristine">
-                Portfolio URL is required
+            <div [hidden]="portfolio_url.valid || portfolio_url.pristine" class="mt-2 alert alert-danger">
+                <strong>Required!</strong> Please fill in the box above.
             </div>
           </div>
 
           <div class="form-group">
             <label for="tools">Tools</label>
             <input type="text"
+                    class="form-control"
                     id="tools"
                     placeholder="Ruby on Rails, PostgreSQL, etc..."
                     required
@@ -45,14 +48,15 @@
                     #tools="ngModel"
                     [(ngModel)]="proposal.tools"
             >
-            <div [hidden]="tools.valid || tools.pristine">
-                A list of tools is required
+            <div [hidden]="tools.valid || tools.pristine" class="mt-2 alert alert-danger">
+                <strong>Required!</strong> Please fill in the box above.
             </div>
           </div>
 
           <div class="form-group">
             <label for="estimated_hours">Estimated Hours</label>
             <input type="number"
+                    class="form-control"
                     id="estimated_hours"
                     placeholder="190"
                     required
@@ -60,29 +64,34 @@
                     #estimated_hours="ngModel"
                     [(ngModel)]="proposal.estimated_hours"
             >
-            <div [hidden]="estimated_hours.valid || estimated_hours.pristine">
-              You need to enter your estimated hours for the project
+            <div [hidden]="estimated_hours.valid || estimated_hours.pristine" class="mt-2 alert alert-danger">
+              <strong>Required!</strong> Please fill in the box above.
             </div>
           </div>
 
           <div class="form-group">
             <label for="hourly_rate">Hourly Rate</label>
-            <input type="number"
-                    id="hourly_rate"
-                    placeholder="120"
-                    required
-                    name="hourly_rate"
-                    #hourly_rate="ngModel"
-                    [(ngModel)]="proposal.hourly_rate"
-            >
-            <div [hidden]="hourly_rate.valid || hourly_rate.pristine">
-              You need to enter your hourly rate for the project
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="number"
+                      class="form-control"
+                      id="hourly_rate"
+                      placeholder="120.00"
+                      required
+                      name="hourly_rate"
+                      #hourly_rate="ngModel"
+                      [(ngModel)]="proposal.hourly_rate"
+              >
+            </div>
+            <div [hidden]="hourly_rate.valid || hourly_rate.pristine" class="mt-2 alert alert-danger">
+              <strong>Required!</strong> Please fill in the box above.
             </div>
           </div>
 
           <div class="form-group">
             <label for="weeks_to_complete">Weeks to Complete</label>
             <input type="number"
+                    class="form-control"
                     id="weeks_to_complete"
                     placeholder="9"
                     required
@@ -90,14 +99,15 @@
                     #weeks_to_complete="ngModel"
                     [(ngModel)]="proposal.weeks_to_complete"
             >
-            <div [hidden]="weeks_to_complete.valid || weeks_to_complete.pristine">
-              You need to enter the weeks you estimate to complete the project
+            <div [hidden]="weeks_to_complete.valid || weeks_to_complete.pristine" class="mt-2 alert alert-danger">
+              <strong>Required!</strong> Please fill in the box above.
             </div>
           </div>
 
           <div class="form-group">
             <label for="client_email">Client e-mail <em>(Optional)</em></label>
             <input type="email"
+                    class="form-control"
                     id="client_email"
                     placeholder="example@domain.com"
                     required
