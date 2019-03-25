@@ -1,37 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { Document } from './document';
+import { DocumentService } from './document.service';
+import { Observable, of, from, timer } from 'rxjs';
 
 @Component({
   selector: 'documents',
   templateUrl: './documents.component.html',
-  styleUrls: ['./documents.component.sass']
+  styleUrls: ['./documents.component.sass'],
+  providers: [DocumentService]
 })
 export class DocumentsComponent implements OnInit {
-  constructor() { }
+  documents: Document[];
+  mode = "Observable";
+  errorMessage: string;
 
-  ngOnInit(): void { }
-  
-  documents: Document[] = [
-    {
-      title: "A new doc",
-      description: "A random description",
-      file_url: "https://www.arandomurl.com/file.pdf",
-      updated_at: "20th of March, 2019",
-      image_url: "https://cdn.pixabay.com/photo/2015/12/04/14/05/code-1076533_960_720.jpg"
-    },
-    {
-      title: "Another doc",
-      description: "A randomer description",
-      file_url: "https://www.arandomurl.com/file.pdf",
-      updated_at: "20th of March, 2019",
-      image_url: "https://cdn.pixabay.com/photo/2015/12/04/14/05/code-1076533_960_720.jpg"
-    },
-    {
-      title: "Yet another doc...",
-      description: "A randomerer description",
-      file_url: "https://www.arandomurl.com/file.pdf",
-      updated_at: "20th of March, 2019",
-      image_url: "https://cdn.pixabay.com/photo/2015/12/04/14/05/code-1076533_960_720.jpg"
-    }
-  ]
+  constructor(
+    private documentService: DocumentService
+  ) { }
+
+  ngOnInit(): void {
+    let time = timer(0, 5000);
+    time.subscribe(() => this.getDocuments());
+  }
+
+  getDocuments() {
+    this.documentService.getDocuments()
+      .subscribe(
+        documents => this.documents = documents,
+        error => this.errorMessage = <any>error
+      );
+  }
 }
