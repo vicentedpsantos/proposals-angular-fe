@@ -2,18 +2,16 @@
   <h1 class="headline">Document Dashboard</h1>
 
   <div class="card mb-3" *ngFor="let document of documents">
-    <img class="card-img-top "src="{{ document.image_url }}" alt="Card Image Cap" height="200">
+    <img class="card-img-top " src="{{ document.image_url }}" alt="Card Image Cap" height="200">
 
     <div class="card-block">
       <h4 class="card-title">{{ document.title }}</h4>
-
+      <p class="card-text"><small class="text-muted">Last updated: {{ document.updated_at | date}}</small></p>
       <p class="card-text">{{ document.description }}</p>
 
       <div>
         <a class="button btn-lg btn-primary" href="{{ document.file_url }}">Download File</a>
       </div>
-
-      <p class="card-text mt-3"><small class="text-muted">Last updated at {{ document.updated_at }}</small></p>
     </div>
   </div>
 </div>
