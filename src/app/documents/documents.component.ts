@@ -10,8 +10,7 @@ export class DocumentsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { }
-
-  pageTitle: string = "Document Dashboard"
+  
   documents: Document[] = [
     {
       title: "A new doc",
